@@ -125,6 +125,7 @@ body {
     gap: 8px;
     transition: all 0.3s ease;
     min-height: 50px;
+    touch-action: manipulation;
 }
 
 .add-subject-btn:hover {
@@ -292,6 +293,7 @@ body {
     justify-content: center;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    touch-action: manipulation;
 }
 
 .count-btn:active {
