@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校用 出席管理アプリ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">出席管理アプリ</h1>
+        </header>
+
+        <section class="global-settings">
+            <div class="settings-card">
+                <h2 class="settings-title">全体設定</h2>
+                <div class="target-rate-setting">
+                    <label for="targetRate" class="setting-label">目標出席率（％）</label>
+                    <input type="number" id="targetRate" class="target-rate-input" min="0" max="100" value="60">
+                    <span class="percent-symbol">％</span>
+                </div>
+            </div>
+        </section>
+
+        <main class="main-content">
+            <section class="subjects-section">
+                <div class="subjects-header">
+                    <h2 class="section-title">教科一覧</h2>
+                </div>
+                <div id="subjectsContainer" class="subjects-container"></div>
+                <div class="add-button-container">
+                    <button id="addSubjectBtn" class="add-subject-btn">
+                        <span class="btn-icon">＋</span>
+                        教科を追加
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <!-- デバッグ用のクリアボタン（開発時のみ使用） -->
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="attendanceManager.clearAllData()" style="background: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px;">すべてのデータをクリア</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

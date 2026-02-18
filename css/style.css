@@ -1,0 +1,476 @@
+/* リセットと基本スタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-title {
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* 全体設定 */
+.global-settings {
+    margin-bottom: 30px;
+}
+
+.settings-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+}
+
+.settings-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.target-rate-setting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.setting-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    min-width: 120px;
+}
+
+.target-rate-input {
+    width: 100px;
+    padding: 12px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.target-rate-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.percent-symbol {
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* メインコンテンツ */
+.main-content {
+    margin-top: 30px;
+}
+
+.subjects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.add-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-subject-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    min-height: 50px;
+}
+
+.add-subject-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 教科コンテナ */
+.subjects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* 教科カード */
+.subject-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.subject-name-container {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.subject-name-display {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.subject-name-display:hover {
+    background-color: #f0f0f0;
+}
+
+.subject-name-input {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    background: white;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    padding: 5px 8px;
+    width: 150px;
+    outline: none;
+}
+
+.subject-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 5px 0;
+    transition: border-color 0.3s ease;
+}
+
+.subject-name:focus {
+    outline: none;
+    border-bottom-color: #3498db;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* コマ数設定 */
+.total-classes-section {
+    margin-bottom: 20px;
+}
+
+.total-classes-label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.total-classes-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.total-classes-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* カウントセクション */
+.count-section {
+    margin-bottom: 20px;
+}
+
+.count-label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.count-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.count-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.count-btn:active {
+    transform: scale(0.95);
+}
+
+.minus-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.minus-btn:hover:not(:disabled) {
+    background: #c0392b;
+}
+
+.plus-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.plus-btn:hover:not(:disabled) {
+    background: #229954;
+}
+
+.count-btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.count-display {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* カウント入力フィールド */
+.count-display-input {
+    width: 60px;
+    padding: 8px 4px;
+    border: 2px solid #e1e8ed;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.count-display-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* 統計情報 */
+.stats-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.stats-title {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.attendance-rate {
+    color: #27ae60;
+}
+
+.attendance-rate.warning {
+    color: #f39c12;
+}
+
+.attendance-rate.danger {
+    color: #e74c3c;
+}
+
+/* 目標達成状態 */
+.target-achieved {
+    color: #27ae60;
+    font-weight: 700;
+}
+
+.target-not-achieved {
+    color: #f39c12;
+    font-weight: 700;
+}
+
+.target-failed{
+    color: #e74c3c;
+}
+
+/* 統計セクション */
+.stats-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .app-title {
+        font-size: 24px;
+    }
+    
+    .subjects-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .add-subject-btn {
+        justify-content: center;
+    }
+    
+    .subjects-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .subject-card {
+        padding: 20px;
+    }
+    
+    .target-rate-setting {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .count-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
